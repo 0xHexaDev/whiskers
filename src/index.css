@@ -2,14 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-
+@font-face {
+  font-family: 'Roundy Rainbows';
+  src: url('/public/fonts/Roundy Rainbows.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roundy Rainbows', arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('/public/images/background.png');
+  background-size: cover;
+  background-position: top;
+  background-repeat: repeat;
+  height: 100vh;
+  letter-spacing: 2px;
 }
 
 code {
