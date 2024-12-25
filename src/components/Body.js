@@ -43,12 +43,10 @@ const Body = () => {
             )}
           </div>
         </div>
-        <p
-          className="text-white lg:text-[37px] md:text-2xl text-xl mt-4 text-left"
-          style={{ fontFamily: 'Courier New, monospace' }}
-        >
+        <p className="text-white lg:text-[37px] md:text-2xl text-xl mt-4 text-left break-words" style={{ fontFamily: '"Courier New", monospace' }}>
           EQCObh4-ZaghOva8uCz_AMMnvifM3PS-EppUJEJQXXnlP0zX
         </p>
+
       </div>
       <div
         className='lg:p-24 md:p-16 p-12 flex -mt-24'
