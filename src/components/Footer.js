@@ -1,86 +1,48 @@
 import React from 'react';
 
-const Footer = () => (
-  <footer className="w-full bg-[#EA5537] text-center py-12 flex justify-center flex-col gap-12">
-    <div className='flex md:gap-8 gap-3 w-full justify-center items-center'>
-      <div className="relative transition duration-100 hover:scale-110 cursor-pointer">
-        <span
-          className={`absolute top-0 left-0 
-           ${typeof text === 'string' ? `lg:mt-2 md:mt-1 mt-[2px] lg:ml-3 md:ml-1 ml-[2px] ` : `md:mt-[15px] mt-[4px] md:ml-[8px] ml-[5px] md:h-5/6 h-[90%]`}
-           h-full w-full lg:rounded-3xl rounded-xl bg-white`}
-        ></span>
-        <span
-          className={`relative inline-block h-full w-full 
-          lg:rounded-3xl rounded-xl lg:border-[4px] border-[2px] border-black  
-        bg-white box-border
-          p-1 lg:p-[10px]
-        md:text-[25px] text-[15px] lg:text-[30px] xl:text-[45px] lg:font-normal font-light `}>
-          <img src="/images/ico-twitter_.svg" alt="Twitter Icon" className='lg:w-16 md:w-12 w-8' />
-        </span>
+const Footer = () => {
+  const socialLinks = [
+    { icon: '/images/ico-twitter_.svg', alt: 'Twitter', bgColor: 'bg-white', link: '#' },
+    { icon: '/images/ico-telegram_.svg', alt: 'Telegram', bgColor: 'bg-[#0096FA]', link: '#' },
+    { icon: '/images/ico-coingecko.svg', alt: 'CoinGecko', bgColor: 'bg-[#8BC53F]', link: '#' },
+    { icon: '/images/ico-coindeno.svg', alt: 'CoinDeno', bgColor: 'bg-[#320170]', link: '#' },
+    { icon: '/images/ico-coindex.svg', alt: 'CoinIndex', bgColor: 'bg-[#111116]', link: '#' }
+  ];
+
+  return (
+    <footer className="w-full bg-gradient-to-r from-[#EA5537] to-[#D04A2F] text-center py-16 flex justify-center flex-col gap-12 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+      
+      <div className='flex md:gap-8 gap-4 w-full justify-center items-center relative z-10'>
+        {socialLinks.map((social, index) => (
+          <div 
+            key={index}
+            className="relative transition-all duration-300 hover:scale-110 cursor-pointer group"
+            onClick={() => window.open(social.link, '_blank')}
+          >
+            <span className="absolute top-0 left-0 md:mt-[15px] mt-[4px] md:ml-[8px] ml-[5px] md:h-5/6 h-[90%] w-full lg:rounded-3xl rounded-xl bg-white shadow-lg"></span>
+            <span className={`relative inline-block h-full w-full lg:rounded-3xl rounded-xl lg:border-[4px] border-[2px] border-black ${social.bgColor} box-border p-1 lg:p-[10px] transition-transform duration-300 group-hover:rotate-3`}>
+              <img 
+                src={social.icon} 
+                alt={social.alt} 
+                className='lg:w-16 md:w-12 w-8 transition-transform duration-300 group-hover:scale-110' 
+              />
+            </span>
+          </div>
+        ))}
       </div>
-      <div className="relative transition duration-100 hover:scale-110 cursor-pointer">
-        <span
-          className={`absolute top-0 left-0 
-           ${typeof text === 'string' ? `lg:mt-2 md:mt-1 mt-[2px] lg:ml-3 md:ml-1 ml-[2px] ` : `md:mt-[15px] mt-[4px] md:ml-[8px] ml-[5px] md:h-5/6 h-[90%]`}
-           h-full w-full lg:rounded-3xl rounded-xl bg-white`}
-        ></span>
-        <span
-          className={`relative inline-block h-full w-full 
-          lg:rounded-3xl rounded-xl lg:border-[4px] border-[2px] border-black  
-        bg-[#0096FA] box-border
-          p-1 lg:p-[10px]
-        md:text-[25px] text-[15px] lg:text-[30px] xl:text-[45px] lg:font-normal font-light `}>
-          <img src="/images/ico-telegram_.svg" alt="telegram Icon" className='lg:w-16 md:w-12 w-8' />
-        </span>
+      
+      <div className="relative z-10">
+        <p className="text-white md:text-[25px] text-lg mt-4 font-medium drop-shadow-lg">
+          Copyright © 2024-2025 all meows reserved
+        </p>
+        <p className="text-white/80 text-sm mt-2">
+          Made with ❤️ for the TON community
+        </p>
       </div>
-      <div className="relative transition duration-100 hover:scale-110 cursor-pointer">
-        <span
-          className={`absolute top-0 left-0 
-           ${typeof text === 'string' ? `lg:mt-2 md:mt-1 mt-[2px] lg:ml-3 md:ml-1 ml-[2px] ` : `md:mt-[15px] mt-[4px] md:ml-[8px] ml-[5px] md:h-5/6 h-[90%]`}
-           h-full w-full lg:rounded-3xl rounded-xl bg-white`}
-        ></span>
-        <span
-          className={`relative inline-block h-full w-full 
-          lg:rounded-3xl rounded-xl lg:border-[4px] border-[2px] border-black  
-        bg-[#8BC53F] box-border
-          p-1 lg:p-[10px]
-        md:text-[25px] text-[15px] lg:text-[30px] xl:text-[45px] lg:font-normal font-light `}>
-          <img src="/images/ico-coingecko.svg" alt="telegram Icon" className='lg:w-16 md:w-12 w-8' />
-        </span>
-      </div>
-      <div className="relative transition duration-100 hover:scale-110 cursor-pointer">
-        <span
-          className={`absolute top-0 left-0 
-           ${typeof text === 'string' ? `lg:mt-2 md:mt-1 mt-[2px] lg:ml-3 md:ml-1 ml-[2px] ` : `md:mt-[15px] mt-[4px] md:ml-[8px] ml-[5px] md:h-5/6 h-[90%]`}
-           h-full w-full lg:rounded-3xl rounded-xl bg-white`}
-        ></span>
-        <span
-          className={`relative inline-block h-full w-full 
-          lg:rounded-3xl rounded-xl lg:border-[4px] border-[2px] border-black  
-        bg-[#320170] box-border
-          p-1 lg:p-[10px]
-        md:text-[25px] text-[15px] lg:text-[30px] xl:text-[45px] lg:font-normal font-light `}>
-          <img src="/images/ico-coindeno.svg" alt="telegram Icon" className='lg:w-16 md:w-12 w-8' />
-        </span>
-      </div>
-      <div className="relative transition duration-100 hover:scale-110 cursor-pointer">
-        <span
-          className={`absolute top-0 left-0 
-           ${typeof text === 'string' ? `lg:mt-2 md:mt-1 mt-[2px] lg:ml-3 md:ml-1 ml-[2px] ` : `md:mt-[15px] mt-[4px] md:ml-[8px] ml-[5px] md:h-5/6 h-[90%]`}
-           h-full w-full lg:rounded-3xl rounded-xl bg-white`}
-        ></span>
-        <span
-          className={`relative inline-block h-full w-full 
-          lg:rounded-3xl rounded-xl lg:border-[4px] border-[2px] border-black  
-        bg-[#111116] box-border
-          p-1 lg:p-[10px]
-        md:text-[25px] text-[15px] lg:text-[30px] xl:text-[45px] lg:font-normal font-light `}>
-          <img src="/images/ico-coindex.svg" alt="telegram Icon" className='lg:w-16 md:w-12 w-8' />
-        </span>
-      </div>
-    </div>
-    <p className="text-white md:text-[25px] text-lg mt-4">Copyright © 2024-2025 all meows reserved</p>
-  </footer>
-);
+    </footer>
+  );
+};
 
 export default Footer;
